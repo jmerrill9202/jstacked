@@ -1,135 +1,154 @@
 import React from 'react'
 import Link from 'next/link'
-import { Clock, User, ArrowRight } from 'lucide-react'
+import { Calendar, Clock, ArrowRight } from 'lucide-react'
 
 export function FeaturedPosts() {
   const posts = [
     {
       id: 1,
-      title: 'The Complete Guide to ChatGPT for Content Creators',
-      excerpt: 'Learn how to use ChatGPT effectively for content creation, from ideation to final polish. Includes 50+ proven prompts.',
-      category: 'AI Writing',
-      readTime: '12 min read',
+      title: 'Content Coming Soon',
+      excerpt: 'We are working on bringing you the best AI tool reviews and guides. Stay tuned for comprehensive insights.',
       author: 'JStacked Team',
       date: '2024-01-15',
+      readTime: '5 min read',
+      category: 'Updates',
+      image: '/api/placeholder/600/400',
       featured: true,
     },
     {
       id: 2,
-      title: 'Midjourney vs DALL-E 3: Which AI Image Generator Wins?',
-      excerpt: 'A comprehensive comparison of the two leading AI image generators, with real examples and use cases.',
-      category: 'AI Art',
-      readTime: '8 min read',
+      title: 'More Articles on the Way',
+      excerpt: 'Our team is testing and reviewing the latest AI tools to bring you honest, practical recommendations.',
       author: 'JStacked Team',
-      date: '2024-01-12',
+      date: '2024-01-10',
+      readTime: '3 min read',
+      category: 'Updates',
+      image: '/api/placeholder/600/400',
       featured: false,
     },
     {
       id: 3,
-      title: 'How to Build a $10k/Month AI Agency in 90 Days',
-      excerpt: 'Step-by-step blueprint for launching and scaling an AI-powered service business from scratch.',
-      category: 'Business',
-      readTime: '15 min read',
+      title: 'Quality Reviews Coming',
+      excerpt: 'We believe in thorough testing and honest reviews. Our upcoming content will help you make informed decisions.',
       author: 'JStacked Team',
-      date: '2024-01-10',
-      featured: false,
-    },
-    {
-      id: 4,
-      title: 'The AI Tools That Replaced My Entire Design Team',
-      excerpt: 'How one freelancer used AI tools to deliver the same quality work as a full design team.',
-      category: 'Design',
-      readTime: '10 min read',
-      author: 'JStacked Team',
-      date: '2024-01-08',
+      date: '2024-01-05',
+      readTime: '4 min read',
+      category: 'Updates',
+      image: '/api/placeholder/600/400',
       featured: false,
     },
   ]
 
-  const featuredPost = posts.find(post => post.featured)
-  const regularPosts = posts.filter(post => !post.featured)
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString)
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  }
 
   return (
-    <div className="grid lg:grid-cols-2 gap-8">
-      {featuredPost && (
-        <div className="lg:col-span-1">
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 card-hover">
-            <div className="h-64 bg-gradient-to-br from-primary-100 to-blue-100 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%23e2e8f0%22%20fill-opacity=%220.2%22%3E%3Ccircle%20cx=%2230%22%20cy=%2230%22%20r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-60" />
-              <div className="absolute top-4 left-4">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
-                  Featured
-                </span>
+    <section className="py-20 bg-neutral-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+            Latest <span className="gradient-text">Insights</span>
+          </h2>
+          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+            Coming Soon: Deep dives into the AI tools that are actually worth your time and money.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+          {/* Featured post */}
+          <div className="lg:col-span-1">
+            <article className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-[16/9] bg-gradient-to-br from-primary-100 to-blue-100 flex items-center justify-center">
+                <span className="text-primary-600 font-semibold">Preview Image</span>
               </div>
-            </div>
-            <div className="p-6">
-              <div className="flex items-center gap-2 text-sm text-neutral-500 mb-3">
-                <span className="text-primary-600 font-medium">{featuredPost.category}</span>
-                <span>•</span>
-                <div className="flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
-                  {featuredPost.readTime}
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                    {posts[0].category}
+                  </span>
+                  <div className="flex items-center text-sm text-neutral-500">
+                    <Calendar className="w-4 h-4 mr-1" />
+                    {formatDate(posts[0].date)}
+                  </div>
+                  <div className="flex items-center text-sm text-neutral-500">
+                    <Clock className="w-4 h-4 mr-1" />
+                    {posts[0].readTime}
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-neutral-900 mb-3">
+                  {posts[0].title}
+                </h3>
+                <p className="text-neutral-600 mb-4 leading-relaxed">
+                  {posts[0].excerpt}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-neutral-500">
+                    By {posts[0].author}
+                  </span>
+                  <Link
+                    href={`/blog/${posts[0].id}`}
+                    className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors duration-200"
+                  >
+                    Read More
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-3 line-clamp-2">
-                {featuredPost.title}
-              </h3>
-              <p className="text-neutral-600 mb-4 line-clamp-3">
-                {featuredPost.excerpt}
-              </p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-sm text-neutral-500">
-                  <User className="w-3 h-3" />
-                  {featuredPost.author}
+            </article>
+          </div>
+
+          {/* Other posts */}
+          <div className="lg:col-span-1 space-y-6">
+            {posts.slice(1).map((post) => (
+              <article key={post.id} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                    {post.category}
+                  </span>
+                  <div className="flex items-center text-sm text-neutral-500">
+                    <Calendar className="w-4 h-4 mr-1" />
+                    {formatDate(post.date)}
+                  </div>
                 </div>
-                <Link 
-                  href={`/blog/${featuredPost.id}`}
-                  className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-700 text-sm font-medium"
-                >
-                  Read More
-                  <ArrowRight className="w-3 h-3" />
-                </Link>
-              </div>
-            </div>
+                <h3 className="text-lg font-bold text-neutral-900 mb-2">
+                  {post.title}
+                </h3>
+                <p className="text-neutral-600 mb-3 text-sm leading-relaxed">
+                  {post.excerpt}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-neutral-500">
+                    By {post.author}
+                  </span>
+                  <Link
+                    href={`/blog/${post.id}`}
+                    className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors duration-200"
+                  >
+                    Read More
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
-      )}
 
-      <div className="lg:col-span-1 space-y-6">
-        {regularPosts.map((post) => (
-          <div key={post.id} className="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-200 card-hover">
-            <div className="p-6">
-              <div className="flex items-center gap-2 text-sm text-neutral-500 mb-3">
-                <span className="text-primary-600 font-medium">{post.category}</span>
-                <span>•</span>
-                <div className="flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
-                  {post.readTime}
-                </div>
-              </div>
-              <h3 className="text-lg font-semibold text-neutral-900 mb-2 line-clamp-2">
-                {post.title}
-              </h3>
-              <p className="text-neutral-600 text-sm mb-4 line-clamp-2">
-                {post.excerpt}
-              </p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-sm text-neutral-500">
-                  <User className="w-3 h-3" />
-                  {post.author}
-                </div>
-                <Link 
-                  href={`/blog/${post.id}`}
-                  className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-700 text-sm font-medium"
-                >
-                  Read More
-                  <ArrowRight className="w-3 h-3" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
+        <div className="text-center">
+          <Link
+            href="/blog"
+            className="btn-primary inline-flex items-center gap-2"
+          >
+            View All Posts
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
-    </div>
+    </section>
   )
 } 

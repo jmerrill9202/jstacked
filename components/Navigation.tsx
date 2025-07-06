@@ -62,7 +62,10 @@ export function Navigation() {
 
           {/* Search and Mobile menu button */}
           <div className="flex items-center space-x-4">
-            <button className="p-2 text-neutral-700 hover:text-primary-600 transition-colors duration-200">
+            <button 
+              className="p-2 text-neutral-700 hover:text-primary-600 transition-colors duration-200 opacity-50 cursor-not-allowed"
+              disabled
+            >
               <Search className="w-5 h-5" />
             </button>
             

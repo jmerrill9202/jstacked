@@ -19,7 +19,7 @@ export function Newsletter() {
           
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Get weekly insights on the latest AI tools, techniques, and trends. 
-            Join 10,000+ creators who never miss an update.
+            Join creators who never miss an update.
           </p>
           
           <div className="max-w-md mx-auto mb-8">
@@ -28,9 +28,13 @@ export function Newsletter() {
                 type="email"
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white/30 backdrop-blur-sm"
+                disabled
               />
-              <button className="px-6 py-3 bg-white text-primary-600 rounded-lg font-medium hover:bg-neutral-100 transition-colors duration-200">
-                Subscribe
+              <button 
+                className="px-6 py-3 bg-white/20 text-white rounded-lg font-medium cursor-not-allowed opacity-50"
+                disabled
+              >
+                Coming Soon
               </button>
             </div>
           </div>

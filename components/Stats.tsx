@@ -3,24 +3,24 @@ import React from 'react'
 export function Stats() {
   const stats = [
     {
-      number: '10,000+',
-      label: 'Creators Helped',
-      description: 'Professionals using our recommendations',
+      number: '25+',
+      label: 'AI Tools Tested',
+      description: 'Rigorously evaluated for quality',
     },
     {
-      number: '250+',
-      label: 'Tools Reviewed',
-      description: 'AI tools tested and evaluated',
+      number: '12+',
+      label: 'In-Depth Reviews',
+      description: 'Comprehensive guides and comparisons',
     },
     {
-      number: '50+',
-      label: 'In-Depth Guides',
-      description: 'Comprehensive implementation tutorials',
+      number: '500+',
+      label: 'Hours of Testing',
+      description: 'Real-world evaluation time',
     },
     {
-      number: '95%',
-      label: 'Success Rate',
-      description: 'Of readers implement our recommendations',
+      number: '100%',
+      label: 'Unbiased Reviews',
+      description: 'Honest, practical assessments',
     },
   ]
 

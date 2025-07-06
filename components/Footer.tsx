@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import { Twitter, Linkedin, Github, Mail } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -17,12 +16,6 @@ export function Footer() {
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' },
       { name: 'Contact', href: '/contact' },
-    ],
-    social: [
-      { name: 'Twitter', href: '#', icon: Twitter },
-      { name: 'LinkedIn', href: '#', icon: Linkedin },
-      { name: 'GitHub', href: '#', icon: Github },
-      { name: 'Email', href: 'mailto:hello@jstacked.com', icon: Mail },
     ],
   }
 
@@ -85,24 +78,10 @@ export function Footer() {
 
         {/* Bottom section */}
         <div className="mt-8 pt-8 border-t border-neutral-200">
-          <div className="flex flex-col sm:flex-row justify-between items-center">
+          <div className="text-center">
             <p className="text-neutral-500 text-sm">
               © {currentYear} JStacked. All rights reserved.
             </p>
-            
-            {/* Social Links */}
-            <div className="flex space-x-6 mt-4 sm:mt-0">
-              {navigation.social.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-neutral-400 hover:text-primary-600 transition-colors duration-200"
-                >
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon className="w-5 h-5" />
-                </Link>
-              ))}
-            </div>
           </div>
         </div>
       </div>

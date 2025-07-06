@@ -17,11 +17,11 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-neutral-700 border border-neutral-200/60 mb-8">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            Trusted by 10,000+ creators
+            Trusted by creators worldwide
           </div>
           
           {/* Main heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 mb-6 tracking-tight leading-tight">
             Master the{' '}
             <span className="gradient-text">AI Tools</span>
             <br />
@@ -29,33 +29,35 @@ export function Hero() {
           </h1>
           
           {/* Subheading */}
-          <p className="text-xl sm:text-2xl text-neutral-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 mb-10 max-w-3xl mx-auto leading-relaxed px-4">
             Stop wasting time on AI tools that overpromise and underdeliver. 
             We curate, test, and review the tools that successful creators actually use.
           </p>
           
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Link href="/blog" className="btn-primary inline-flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 px-4">
+            <Link href="/blog" className="btn-primary inline-flex items-center gap-2 w-full sm:w-auto justify-center">
               Explore Latest Reviews
               <ArrowRight className="w-4 h-4" />
             </Link>
             
-            <button className="btn-secondary inline-flex items-center gap-2">
+            <button 
+              className="btn-secondary inline-flex items-center gap-2 w-full sm:w-auto justify-center opacity-50 cursor-not-allowed"
+              disabled
+            >
               <Play className="w-4 h-4" />
-              Watch Demo
+              Coming Soon
             </button>
           </div>
           
           {/* Featured in */}
-          <div className="text-center">
+          <div className="text-center px-4">
             <p className="text-sm text-neutral-500 mb-4">Featured in</p>
-            <div className="flex items-center justify-center gap-8 opacity-60">
-              {/* Placeholder for company logos */}
-              <div className="h-8 w-24 bg-neutral-300 rounded opacity-40"></div>
-              <div className="h-8 w-24 bg-neutral-300 rounded opacity-40"></div>
-              <div className="h-8 w-24 bg-neutral-300 rounded opacity-40"></div>
-              <div className="h-8 w-24 bg-neutral-300 rounded opacity-40"></div>
+            <div className="flex items-center justify-center gap-4 sm:gap-8 opacity-60">
+              <div className="h-6 w-16 sm:h-8 sm:w-24 bg-neutral-300 rounded opacity-40"></div>
+              <div className="h-6 w-16 sm:h-8 sm:w-24 bg-neutral-300 rounded opacity-40"></div>
+              <div className="h-6 w-16 sm:h-8 sm:w-24 bg-neutral-300 rounded opacity-40"></div>
+              <div className="h-6 w-16 sm:h-8 sm:w-24 bg-neutral-300 rounded opacity-40 hidden sm:block"></div>
             </div>
           </div>
         </div>
